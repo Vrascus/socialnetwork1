@@ -3,7 +3,8 @@ import c from './MyPosts.module.css';
 import Post from "../Post";
 
 const MyPosts = () => {
-    return <>
+    return (
+        <div>
                 My posts
                 <div>
                     <textarea></textarea>
@@ -11,9 +12,10 @@ const MyPosts = () => {
                     <button>Remove</button>
                 </div>
                 <div className={c.posts}>
-                    <Post message='Hi, how are you?' />
-                    <Post message="It's my first post"/>
+                    <Post message=' Hi, how are you? ' />
+                    <Post message=" It's my first post "/>
                 </div>
-    </>
+    </div>
+    )
 };
 export default MyPosts;

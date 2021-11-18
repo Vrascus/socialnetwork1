@@ -1,6 +1,6 @@
-import React from "react";
+import React, {Fragment} from "react";
 import c from './Profile.module.css';
-import Post from "./MyPosts/Post";
+import MyPosts from './MyPosts/Post/MyPosts'
 
 const Profile = () => {
     return <>
@@ -11,7 +11,7 @@ const Profile = () => {
             <div>
                 ava+description
             </div>
-          <Post />
+            <MyPosts/>
         </div>
     </>
 };
