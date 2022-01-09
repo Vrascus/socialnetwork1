@@ -7,7 +7,7 @@ const Navi = () => {
     return<>
         <nav className={c.navi}>
             <div className={c.item}>
-                <NavLink /*exact*/ to="/profile">Profile</NavLink>
+                <NavLink exact to="/profile">Profile</NavLink>
             </div>
             <div className={`${c.item} ${c.active}`}>
                 <a href="/dialogs"> Missages</a>
