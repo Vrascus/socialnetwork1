@@ -11,13 +11,18 @@ let SumeComponent = () => <Dialogs />
 const App = (props) => {
     return (
         <BrowserRouter>
+            <body background='FaceImg'></body>
         <div className='app-wrapper'>
             <Header/>
             <Navi/>
             <div className='app-wrapper-content'>
                 <Routes>
-                <Route path="/dialogs" element={ <Dialogs dialogs={props.dialogs} messageData={props.messageData}/> }/>
-                <Route path="/profile" element={ <Profile posts={props.posts} /> }/>
+                <Route path="/dialogs"
+                       element={ <Dialogs
+                    state={props.state.messagesPage}/> }/>
+                <Route path="/profile"
+                       element={ <Profile
+                           state={props.state.profilePage} /> }/>
                 </Routes>
             </div>
         </div>

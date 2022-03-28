@@ -21,6 +21,9 @@ const Navi = () => {
             <div className={c.item}>
                 <a href="/settings">Settings</a>
             </div>
+            <div className={c.item}>
+                <a href="/friends">Friends</a>
+            </div>
         </nav>
     </>
 };

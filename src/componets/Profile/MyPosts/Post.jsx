@@ -2,7 +2,7 @@ import React from "react";
 import c from './Post.module.css';
 
 const Post = (props) => {
-
+debugger;
     return (
         <div>
                 <div className={c.posts}>
