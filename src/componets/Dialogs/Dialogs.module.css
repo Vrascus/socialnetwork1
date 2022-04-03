@@ -1,10 +1,19 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 25fr;
+    grid-template-areas:
+    "d m"
+    "d m"
+    "n n";
+    grid-template-rows: 200px 3fr;
+    grid-template-colums: 3fr 60fr;
+    grid-gap: 30px
 }
 
 .dialogsItems {
+    grid-area: d;
     padding: 10px;
+    background-color: black;
 
 }
 
@@ -13,12 +22,17 @@
 }
 
 .messages {
-    padding: 10px;
+    grid-area: m;
+    padding: 20px;
+    background-color: darkblue;
+
 
 }
-
-.message {
-
+.MissageBlock{
+    grid-area: n;
+    padding: 20px;
 }
+
+
 
 

@@ -5,8 +5,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div className='Face'>
-                <img src='![](Face.png)'/>
-             {/*  https://99px.ru/sstorage/53/2017/03/mid_195563_2531.jp*/}
+                <img src='https://p4.wallpaperbetter.com/wallpaper/83/597/79/fantasy-anubis-wallpaper-preview.jpg'/>
             </div>
             <div className={c.descriptionBlock}>
                 ava+description
