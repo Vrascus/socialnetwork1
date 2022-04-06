@@ -9,6 +9,8 @@ import {BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom";
 let SumeComponent = () => <Dialogs />
 
 const App = (props) => {
+    console.log(props)
+
     return (
         <BrowserRouter>
             <body background='FaceImg'></body>
@@ -22,8 +24,10 @@ const App = (props) => {
                     state={props.state.messagesPage}/> }/>
                 <Route path="/profile"
                        element={ <Profile
-                           state={props.state.profilePage}
-                           addPost={props.addPost} /> }/>
+                           profilePage={props.state.profilePage}
+                           addPost={props.addPost}
+                           updateNewPostText={props.updateNewPostText}
+                       /> }/>
                 </Routes>
             </div>
         </div>
