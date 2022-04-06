@@ -6,7 +6,6 @@ import Profile from "./componets/Profile/Profile";
 import Dialogs from "./componets/Dialogs/Dialogs";
 import {BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom";
 
-let SumeComponent = () => <Dialogs />
 
 const App = (props) => {
     console.log(props)
