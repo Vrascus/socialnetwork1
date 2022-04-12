@@ -25,7 +25,6 @@ let store = {
     getState() {
         return this._state;
     },
-
     subscribe(observer) {
         this._callSubscriber = observer;
     },
@@ -49,9 +48,13 @@ let store = {
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
+export const addPostActionCreator = () =>
+{return {type: ADD_POST}}
 
-export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
+export const updateNewPostActionCreator = (text) =>
+    {return {type:UPDATE_NEW_POST_TEXT, newText: text}
+        /*{type: UPDATE_NEW_POST_TEXT, newText: text}*/
+    }
 
 export default store;
 window.state = store;
