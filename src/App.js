@@ -4,7 +4,7 @@ import Header from "./componets/Header/Header";
 import Navi from "./componets/Navi/Navi";
 import Profile from "./componets/Profile/Profile";
 import Dialogs from "./componets/Dialogs/Dialogs";
-import {BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 const App = (props) => {
@@ -24,8 +24,7 @@ const App = (props) => {
                 <Route path="/profile"
                        element={ <Profile
                            profilePage={props.state.profilePage}
-                           addPost={props.addPost}
-                           updateNewPostText={props.updateNewPostText}
+                           dispatch={props.dispatch}
                        /> }/>
                 </Routes>
             </div>
