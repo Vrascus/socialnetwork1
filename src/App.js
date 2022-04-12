@@ -11,8 +11,7 @@ const App = (props) => {
     console.log(props)
 
     return (
-        <BrowserRouter>
-            <body background='FaceImg'></body>
+        /* <body background='FaceImg'></body>*/
         <div className='app-wrapper'>
             <Header/>
             <Navi/>
@@ -29,7 +28,7 @@ const App = (props) => {
                 </Routes>
             </div>
         </div>
-        </BrowserRouter>
+
     )
 
 }
