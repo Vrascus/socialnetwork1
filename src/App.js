@@ -4,11 +4,11 @@ import Header from "./componets/Header/Header";
 import Navi from "./componets/Navi/Navi";
 import Profile from "./componets/Profile/Profile";
 import Dialogs from "./componets/Dialogs/Dialogs";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
+import MessageBlock from "./componets/Dialogs/Message/MissageBlock/MessageBlock";
 
 
 const App = (props) => {
-    console.log(props)
 
     return (
         /* <body background='FaceImg'></body>*/
@@ -18,8 +18,8 @@ const App = (props) => {
             <div className='app-wrapper-content'>
                 <Routes>
                 <Route path="/dialogs"
-                       element={ <Dialogs
-                           state={props.state.messagesPage}/> }/>
+                       element={ <Dialogs store={props.store} /> }
+                />
                 <Route path="/profile"
                        element={ <Profile
                            profilePage={props.state.profilePage}
