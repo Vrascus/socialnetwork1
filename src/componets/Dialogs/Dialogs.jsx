@@ -8,18 +8,18 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialo
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().messagesPage;
+    let state = props.messagesPage;
 
-    let dialogsElements = state.dialogs.map ( d => <DialogItem name={d.name} id={d.id} /> );
-    let messagesElements = state.messageData.map( m => <Message message={m.message}/>);
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = state.messageData.map(m => <Message message={m.message}/>);
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
-        props.store.dispatch (sendMessageCreator());
+        props.sendMessage();
     }
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch (updateNewMessageBodyCreator(body));
+        props.updateNewMessageBody(body);
     }
 
 
@@ -27,7 +27,7 @@ const Dialogs = (props) => {
         <div>
             <div className={c.dialogs}>
                 <div className={c.dialogsItems}>
-                    { dialogsElements }
+                    {dialogsElements}
                 </div>
                 <div className={c.messages}>
                     <div>{messagesElements}</div>
@@ -37,13 +37,12 @@ const Dialogs = (props) => {
                           placeholder='Enter your message'></textarea>
                     </div>
                     <div>
-                        <button onClick={ onSendMessageClick }>Добавить</button>
+                        <button onClick={onSendMessageClick}>Добавить</button>
                     </div>
                 </div>
             </div>
             {/*<MessageBlock/>*/}
-        </div>
-    )
+        </div>)
 };
 
 export default Dialogs;
