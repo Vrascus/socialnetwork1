@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import c from './Profile.module.css';
-import MyPosts from './MyPosts/Post/MyPosts';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/Post/MyPostsContainer";
 
