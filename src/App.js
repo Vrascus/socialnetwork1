@@ -6,9 +6,10 @@ import Profile from "./componets/Profile/Profile";
 import {Routes, Route} from "react-router-dom";
 import MessageBlock from "./componets/Dialogs/Message/MissageBlock/MessageBlock";
 import DialogsContainer from "./componets/Dialogs/DialogsContainer";
+import UsersContainer from "./componets/Users/UsersContainer";
 
 
-const App = (props) => {
+const App = () => {
 
     return (
         /* <body background='FaceImg'></body>*/
@@ -17,10 +18,12 @@ const App = (props) => {
             <Navi/>
             <div className='app-wrapper-content'>
                 <Routes>
-                <Route path="/dialogs"
-                       element={ <DialogsContainer /> }/>
-                <Route path="/profile"
-                       element={ <Profile/> }/>
+                    <Route path="/dialogs"
+                           element={<DialogsContainer/>}/>
+                    <Route path="/profile"
+                           element={<Profile/>}/>
+                    <Route path="/users"
+                           element={<UsersContainer/>}/>
                 </Routes>
             </div>
         </div>

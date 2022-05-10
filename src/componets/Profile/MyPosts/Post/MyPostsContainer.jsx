@@ -28,7 +28,6 @@ import {connect} from "react-redux";
 //         }}
 //         </StoreContext.Consumer>)
 // }
-
 let mapStateToProps = (state) => {
     return {
         posts: state.profilePage.posts,
