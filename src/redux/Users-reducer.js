@@ -1,43 +1,15 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
-let initialState = {
-    users: [{
-        id: 1,
-        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplypwN9kHolvQU6XdywpRmk-e5fN86g93w&usqp=CAU',
-        followed: false,
-        fullName: 'Voper',
-        status: 'I am a boss',
-        location: {city: 'Minsk', country: 'Belarus'}
-    }, {
-        id: 2,
-        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplypwN9kHolvQU6XdywpRmk-e5fN86g93w&usqp=CAU',
-        followed: true,
-        fullName: 'Suam',
-        status: 'Good luck',
-        location: {city: 'Minsk', country: 'Belarus'}
-    }, {
-        id: 3,
-        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplypwN9kHolvQU6XdywpRmk-e5fN86g93w&usqp=CAU',
-        followed: false,
-        fullName: 'Dimych',
-        status: 'Yuo face my ass',
-        location: {city: 'Moscow', country: 'Russia'}
-    }, {
-        id: 4,
-        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcplypwN9kHolvQU6XdywpRmk-e5fN86g93w&usqp=CAU',
-        followed: true,
-        fullName: 'Sveta',
-        status: '.....',
-        location: {city: 'Kiev', country: 'Ukraine'}
-    }, {id: 5,
-        followed: true,
-        fullName: 'Sasha',
-        status: '.....sad',
-        location: {city: 'Minsk',
-            country: 'Belarus'}},
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
-    ], newPostText: ''
+
+let initialState = {
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 2
 };
 
 
@@ -63,7 +35,13 @@ const UsersReducer = (state = initialState, action) => {
                 })
             }
         case SET_USERS: {
-            return {...state, users: [...state.users, ...action.users]}
+            return {...state, users: action.users}
+        }
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.currentPage}
+        }
+        case SET_TOTAL_USERS_COUNT: {
+            return {...state, totalUsersCount: action.count}
         }
 
         default :
@@ -71,11 +49,10 @@ const UsersReducer = (state = initialState, action) => {
     }
 }
 
-export const followAC = (userId) => (
-    {type: FOLLOW, userId})
-export const unfollowAC = (userId) => (
-    {type: UNFOLLOW, userId})
-export const setUsersAC = (users) => (
-    {type: SET_USERS, users})
+export const followAC = (userId) => ({type: FOLLOW, userId})
+export const unfollowAC = (userId) => ({type: UNFOLLOW, userId})
+export const setUsersAC = (users) => ({type: SET_USERS, users})
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const setTotalUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount})
 
 export default UsersReducer;

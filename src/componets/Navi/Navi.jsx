@@ -22,7 +22,7 @@ const Navi = () => {
                 <a href="/settings">Settings</a>
             </div>
             <div className={c.item}>
-                <a href="/friends">Friends</a>
+                <a href="/users">Users</a>
             </div>
         </nav>
     </>
