@@ -3,7 +3,7 @@ import c from './Navi.module.css';
 import {NavLink} from "react-router-dom";
 
 
-const Navi = () => {
+const Navbar = () => {
     return<>
         <nav className={c.navi}>
             <div className={c.item}>
@@ -28,4 +28,4 @@ const Navi = () => {
     </>
 };
 
-export default Navi;
+export default Navbar;

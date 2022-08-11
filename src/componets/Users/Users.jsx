@@ -3,6 +3,7 @@ import styles from "./users.module.css";
 import userPhoto from "../../img/tuf.jpg";
 
 
+
 let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -12,20 +13,20 @@ let Users = (props) => {
         pages.push(i);
     }
 
-    return
-    <div>
+    return <div>
         <div>
             {pages.map(p => {
                 return <span className={props.currentPage === p && styles.selectedPage}
                              onClick={(e) => {
-                                 this.onPageChanged(p)
+                                 props.onPageChanged(p);
                              }}>{p}</span>
             })}
         </div>
         {props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto}/>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto}
+                             className={styles.userPhoto}/>
                     </div>
                     <div>
                         {u.followed ? <button onClick={() => {
@@ -49,5 +50,4 @@ let Users = (props) => {
         </div>)}
     </div>
 }
-
 export default Users;
